@@ -1,0 +1,7 @@
+<a href="/">Back to Root</a>
+
+<ul>
+  <li><%= @listing.street %></li>
+  <li><%= @listing.city %>, <%= @listing.state %> <%= @listing.zip %></li>
+  <li>Coordinates: <%= @listing.get_lat_long %></li>
+</ul>
