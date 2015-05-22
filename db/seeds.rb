@@ -1,7 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#reset
+
+SavedListing.destroy_all
+Listing.destroy_listings
+
+Listing.fetch_corcoran
+Listing.fetch_zillow
+
+
+listings = Listing.all
+
+
+listings.each do |listing|
+  coords = listing.get_lat_long
+
+  lat = coords.split(', ')[0]
+  lon = coords.split(', ')[1]
+
+  SavedListing.create!(
+    street: listing.street,
+    city: listing.city,
+    state: listing.state,
+    zip: listing.zip,
+    latitude: lat,
+    longitude: lon
+  )
+
+  sleep(0.2)
+
+end

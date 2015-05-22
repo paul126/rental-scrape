@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get '/corcoran', to: 'static_pages#corcoran'
 
   resources :listings, only: [:index, :show]
+  resources :saved_listings, only: [:index]
+
 
 end
