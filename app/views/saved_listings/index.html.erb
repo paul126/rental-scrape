@@ -6,7 +6,7 @@
 
 
 <% @listings.each do |listing| %>
-  <ul>
+  <ul class="group">
     <li><%= listing.street %></li>
     <li><%= listing.city %>, <%= listing.state %> <%= listing.zip %></li>
     <li>Coordinates: <%= listing.latitude %>, <%= listing.longitude %></li>

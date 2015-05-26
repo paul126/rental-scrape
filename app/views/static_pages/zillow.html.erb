@@ -1,6 +1,4 @@
 <a href="/">Back to Root</a>
-<br>
-<br>
 <a href="/listings">Get all Coordinates</a>
 <p>
   Total Listings: <%= @listings.count %>
@@ -8,7 +6,7 @@
 
 
 <% @listings.each do |listing| %>
-  <ul>
+  <ul ul class="group">
     <li><%= listing.street %></li>
     <li><%= listing.city %>, <%= listing.state %> <%= listing.zip %></li>
     <li><a href="/listings/<%= listing.id %>">Get Coordinates</a></li>
